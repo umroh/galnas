@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-responsive">
+        <tr>
+        <th>No.</th>
+        <th>Nama</th>
+        <th>Biografi Singkat</th>
+        <th>Masa Hidup</th>
+        <th>Alamat</th>
+        <th>Narahubung</th>
+        <th>Tindakan</th>
+        <th>Lihat Daftar Karya</th>
+        </tr>
+        {% for anggota in seniman %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ anggota.nama }}</td>
+                <td align="justify" width="50%">{{ anggota.biografi }}</td>
+                <td>{{ anggota.tahun_lahir }} - {{ anggota.tahun_meninggal }}</td>
+                <td>{{ anggota.alamat }}</td>
+                <td>{{ anggota.narahubung }}</td>
+                <td><button type="button" class="btn btn-default btn-sm">Lihat Karya</button></td>
+                <td><button type="button" class="btn btn-default btn-sm">Sunting</button> /
+                    <button type="button" class="btn btn-default btn-sm">Hapus</button></td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-responsive">
+        <tr>
+        <th>No.</th>
+        <th>Deskripsi Kategori</th>
+        <th>Tindakan</th>
+        </tr>
+        {% for kategori in kategori_karya %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ kategori.deskripsi_kategori }}</td>
+                <td><button type="button" class="btn btn-default btn-sm">Sunting</button> /
+                    <button type="button" class="btn btn-default btn-sm">Hapus</button></td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

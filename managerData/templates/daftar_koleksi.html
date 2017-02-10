@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-responsive">
+        <tr>
+        <th>No.</th>
+        <th>No. Inv</th>
+        <th>Judul Karya</th>
+        <th>Seniman</th>
+        <th>Foto</th>
+        <th>Tindakan</th>
+        </tr>
+        {% for karya in koleksi %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ karya.no_inventaris }}</td>
+                <td>{{ karya.judul_karya }}</td>
+                <td>{{ karya.id_seniman.nama }}</td>
+                <td style="width: 7%"><img src="/{{ karya.foto}}" style="display: block" width="100%"></td>
+                <td><button type="button" class="btn btn-default btn-sm">Sunting</button> /
+                    <button type="button" class="btn btn-default btn-sm">Hapus</button></td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-responsive">
+        <tr>
+        <th>No.</th>
+        <th>Nama</th>
+        <th>Jabatan</th>
+        <th>Tindakan</th>
+        </tr>
+        {% for anggota in pegawai %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ anggota.nama }}</td>
+                <td>{{ anggota.jabatan }}</td>
+                <td><button type="button" class="btn btn-default btn-sm">Sunting</button> /
+                    <button type="button" class="btn btn-default btn-sm">Hapus</button></td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

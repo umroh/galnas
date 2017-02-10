@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <fieldset>
+    <legend>Daftar Tabel yang terdapat dalam sistem:</legend>
+        <p>Berikut adalah tabel yang terdaftar di dalam sistem pendaftaran karya ini. Silahkan mengacu pada tabel ini.
+            Jika terdapat data ya ng tidak ada di dalam sistem, silahkan melakukan penambahan atau pengurangan karya.</p>
+
+        <br/>
+        <br/>
+        <br/>
+        <table class="table table-responsive">{% csrf_token %}
+            <tr>
+                <th>No.</th>
+                <th>Nama Tabel</th>
+                <th>Deskripsi</th>
+                <th>Tambah Data</th>
+                <th>Lihat Tabel</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>Koleksi</td>
+                <td>Berisi daftar koleksi yang telah dimasukkan ke dalam sistem. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Data Koleksi</button></td>
+                <td><a href="{% url 'data-manager:daftar-koleksi' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Koleksi</a></td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Seniman</td>
+                <td>Berisi daftar Seniman yang telah dimasukkan ke dalam sistem. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Data Seniman</button></td>
+                <td><a href="{% url 'data-manager:daftar-seniman' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Seniman</a></td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Lokasi Penyimpanan Karya</td>
+                <td>Berisi daftar Lokasi Penyimpanan Karya yang telah dimasukkan ke dalam storage. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Lokasi</button></td>
+                <td><a href="{% url 'data-manager:daftar-lokasi-penyimpanan' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Lokasi</a></td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Cara Perolehan Karya</td>
+                <td>Berisi daftar Cara Perolehan Karya yang dikelola oleh Galeri Nasional.</td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Cara Perolehan</button></td>
+                <td><a href="{% url 'data-manager:daftar-cara-perolehan' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Cara Perolehan</a></td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Kategori Karya</td>
+                <td>Berisi daftar Kategori Karya yang dikelola oleh Galeri Nasional. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Kategori</button></td>
+                <td><a href="{% url 'data-manager:daftar-kategori-karya' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Kategori</a></td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Kondisi Karya</td>
+                <td>Berisi daftar Kodisi Karya yang dikelola oleh Galeri Nasional. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Kondisi</button></td>
+                <td><a href="{% url 'data-manager:daftar-kondisi-karya' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Kondisi</a></td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Status Karya</td>
+                <td>Berisi daftar Status Karya yang dikelola oleh Galeri Nasional. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Status</button></td>
+                <td><a href="{% url 'data-manager:daftar-status-karya' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Status</a></td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Instansi</td>
+                <td>Berisi daftar Instansi terkait Karya yang dikelola oleh Galeri Nasional. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Instansi</button></td>
+                <td><a href="{% url 'data-manager:daftar-instansi' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Instansi</a></td>
+            </tr>
+            <tr>
+                <td>9.</td>
+                <td>Pegawai</td>
+                <td>Berisi daftar Pegawai yang bekerja di Galeri Nasional dan melakukan pekerjaan terkait karya. </td>
+                <td><button type="button" class="btn btn-default btn-sm">Tambah Pegawai</button></td>
+                <td><a href="{% url 'data-manager:daftar-pegawai' %}" type="button" class="btn btn-default btn-sm">Lihat Daftar Pegawai</a></td>
+            </tr>
+    </table>
+    </fieldset>
+</div>
+{% endblock %}
